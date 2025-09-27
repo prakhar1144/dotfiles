@@ -1,0 +1,25 @@
+[user]
+	name = Prakhar Pratyush
+	email = prakhar1144@gmail.com
+	signingkey = 9E5E07129C7EEC68
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[alias]
+	lol = log --oneline
+	pa = log -S  # pick-axe
+	lsp = log --stat -p  # git lsp hash
+	ri = "!f() { git rebase -i HEAD~$1; }; f"
+	rc = rebase --continue
+	fu = fetch upstream
+	rum = rebase upstream/main
+	st = status
+	rst = restore
+	co = checkout
+	cb = checkout -b
+	ct = commit -s
+	ca = commit --amend -s
+	po = push origin
