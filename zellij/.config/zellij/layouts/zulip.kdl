@@ -1,0 +1,21 @@
+// layout to use while working on zulip
+//
+// Run: zellij -l zulip
+layout {
+    cwd "~/zulip/"
+    pane split_direction="vertical" {
+        pane {
+            command "zsh"
+            args "-c" "vagrant ssh -- -t 'bash -l -c \"claude; exec bash -l\"'"
+        }
+        pane split_direction="horizontal" {
+            pane {
+                command "zsh"
+                args "-c" "until vagrant ssh-config &>/dev/null && ! vagrant status 2>&1 | grep -q locked; do sleep 1; done && vagrant ssh"
+            }
+            pane {
+                focus true
+            }
+        }
+    }
+}
